@@ -1,5 +1,5 @@
 {
-  "npmScope": "sda",
+  "npmScope": "sda-angular-commons",
   "affected": {
     "defaultBase": "master"
   },
