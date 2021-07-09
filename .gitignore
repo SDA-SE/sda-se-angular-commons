@@ -306,6 +306,9 @@ $RECYCLE.BIN/
 
 ### nrwl ###
 
+# migrations
+migrations.json
+
 # compiled output
 /dist
 /tmp
