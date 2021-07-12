@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    target-branch: "master"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "03:00"
+      timezone: Europe/Berlin
+    commit-message:
+      prefix: "fix"
+      include: "scope"
