@@ -56,7 +56,7 @@
           {
             "accessibility": "explicit",
             "overrides": {
-              "accessors": "explicit"
+              "constructors": "no-public"
             }
           }
         ],
