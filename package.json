@@ -1,0 +1,95 @@
+{
+  "name": "sda-angular-commons",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "nx build",
+    "build:all": "nx run-many --target=build --all",
+    "build:prod": "nx build --prod",
+    "build:prod:all": "npm run build:all -- -- --prod",
+    "clean": "rimraf node_modules dist && npm i",
+    "format": "nx format:write",
+    "format:ci": "nx format:check",
+    "lint": "npm run lint:workspace && npm run lint:code -- --fix && npm run lint:style -- --fix",
+    "lint:ci": "npm run lint:code && npm run lint:style",
+    "lint:code": "nx run-many --target=lint --all -- --quiet",
+    "lint:workspace": "nx workspace-lint",
+    "lint:style": "stylelint packages/**/*{.css,.scss} --allow-empty-input",
+    "prepare": "husky install",
+    "start": "nx serve",
+    "test": "nx run-many --target=test --all -- --code-coverage",
+    "update": "nx migrate latest",
+    "postinstall": "ngcc --properties es2015 browser module main"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^12.0.0",
+    "@angular/common": "^12.0.0",
+    "@angular/compiler": "^12.0.0",
+    "@angular/core": "^12.0.0",
+    "@angular/forms": "^12.0.0",
+    "@angular/platform-browser": "^12.0.0",
+    "@angular/platform-browser-dynamic": "^12.0.0",
+    "@angular/router": "^12.0.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^12.0.0",
+    "@angular-eslint/eslint-plugin": "~12.0.0",
+    "@angular-eslint/eslint-plugin-template": "~12.0.0",
+    "@angular-eslint/template-parser": "~12.0.0",
+    "@angular/compiler-cli": "^12.0.0",
+    "@angular/language-service": "^12.0.0",
+    "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "12.1.4",
+    "@nrwl/angular": "12.5.7",
+    "@nrwl/cli": "12.5.7",
+    "@nrwl/eslint-plugin-nx": "12.5.7",
+    "@nrwl/jest": "12.5.7",
+    "@nrwl/tao": "12.5.7",
+    "@nrwl/workspace": "12.5.7",
+    "@types/jest": "26.0.8",
+    "@types/node": "14.14.33",
+    "@typescript-eslint/eslint-plugin": "4.28.2",
+    "@typescript-eslint/parser": "4.28.2",
+    "dotenv": "8.2.0",
+    "eslint": "7.30.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-cypress": "2.11.3",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-prettier": "3.4.0",
+    "husky": "7.0.1",
+    "import-sort-style-module": "6.0.0",
+    "jest": "27.0.3",
+    "jest-preset-angular": "9.0.3",
+    "lint-staged": "11.0.0",
+    "ng-packagr": "^12.1.0",
+    "prettier": "2.3.2",
+    "prettier-plugin-import-sort": "0.0.7",
+    "rimraf": "3.0.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-standard": "22.0.0",
+    "stylelint-no-unsupported-browser-features": "5.0.1",
+    "stylelint-scss": "3.19.0",
+    "ts-jest": "27.0.3",
+    "ts-node": "~9.1.1",
+    "typescript": "~4.2.4"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,json,yaml,yml,md,html,scss,css}": [
+      "prettier --write"
+    ],
+    "**/*.scss": [
+      "stylelint --fix"
+    ]
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "module",
+      "parser": "typescript"
+    }
+  }
+}

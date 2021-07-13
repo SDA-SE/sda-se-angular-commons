@@ -1,0 +1,45 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "syntax": "scss",
+  "plugins": ["stylelint-scss", "stylelint-no-unsupported-browser-features"],
+  "rules": {
+    "max-nesting-depth": 3,
+    "comment-empty-line-before": [
+      "always",
+      {
+        "ignore": ["stylelint-commands", "after-comment"]
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": ["custom-elements", "default-namespace"]
+      }
+    ],
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "severity": "error",
+        "ignore": [
+          "css-boxshadow",
+          "pointer-events",
+          "border-radius",
+          "border-image",
+          "css-gradients",
+          "css-textshadow",
+          "transforms2d",
+          "css-animation",
+          "css-transitions",
+          "css-transform",
+          "transition",
+          "transform",
+          "css-image-set",
+          "flexbox",
+          "viewport-units",
+          "calc",
+          "intrinsic-width"
+        ]
+      }
+    ]
+  }
+}
