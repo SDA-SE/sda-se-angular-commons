@@ -1,6 +1,5 @@
 #### Checklist
 
-- [ ] Title contains ticket number and ticket title
 - [ ] I did test my changes
 - [ ] Breaking Change commit has been added && other teams are informed (if required)
 - [ ] My code follows the style guidelines of this project
